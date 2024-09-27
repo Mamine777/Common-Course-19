@@ -1,64 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map.c                                        :+:      :+:    :+:   */
+/*   check_map_angles.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 12:43:39 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/27 12:28:47 by mokariou         ###   ########.fr       */
+/*   Created: 2024/09/24 23:27:38 by mokariou          #+#    #+#             */
+/*   Updated: 2024/09/27 12:22:02 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-static int	check_character(char c)
+int	check_angles(int fd)
 {
-	if (c != 'P' && c != '1' && c != 'C' && c != '0' && c != 'E')
-	{
-		printf("wopwoop🗺️, found undefined characters, fix the map please..\n");
-		return (1);
-	}
-	return (0);
-}
-
-static int	count_lines(char *buffer)
-{
-	int	i;
-	int	line;
-
-	i = 0;
-	line = 0;
-	while (buffer[i])
-	{
-		if (buffer[i] == '\n')
-			line++;
-		i++;
-	}
-	return (line);
-}
-
-int	checkmap(int fd)
-{
+	int		width;
 	char	*buffer;
-	int		index;
+	int		length_current;
 
 	buffer = get_next_line(fd);
+	if (!buffer)
+		return (1);
+	width = ft_strlen(buffer);
+	if (buffer[width - 1] == '\n')
+		width -= 1;
 	while (buffer != NULL && buffer[0] != '\0')
 	{
-		index = 0;
-		while (buffer[index])
+		length_current = ft_strlen(buffer);
+		if (buffer[length_current - 1] == '\n')
+			length_current -= 1;
+		if (width != length_current)
 		{
-			if (check_character(buffer[index]) == 1)
-			{
-				free(buffer);
-				close(fd);
-				exit(1);
-			}
-			index++;
+			free(buffer);
+			return (1);
 		}
+		length_current = 0;
 		free(buffer);
 		buffer = get_next_line(fd);
 	}
 	return (0);
 }
+
+/*#include <stdio.h>
+int	main(int ac, char **av)
+{
+	(void) ac;
+	int	fd = open(av[1], O_RDONLY);
+	printf ("%d", check_angles(fd));
+}*/

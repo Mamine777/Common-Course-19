@@ -6,7 +6,7 @@
 /*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 11:57:07 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/13 13:19:26 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/09/26 11:48:42 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 		{
 			return (0);
 		}
-		while (line < 14)
+		while (line <= 1)
 		{
 			printf("%d->%s", line++, get_next_line(fd));
 		}

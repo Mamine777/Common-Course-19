@@ -6,7 +6,7 @@
 /*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 15:57:22 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/21 12:30:50 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/09/27 19:22:27 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,8 @@ int		count_coins(t_data *data);
 void	read_map(t_data *data);
 void	place_empty(t_data *data, int i, int j);
 void	load_img(t_data *data);
-
+int		check_angles(int fd);
+void	count_dimensions(t_data *data, int fd);
+void	locate_memory(t_data *data);
+void	read_map(int fd, t_data *data);
 #endif
