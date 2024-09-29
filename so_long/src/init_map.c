@@ -6,13 +6,13 @@
 /*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 13:31:12 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/27 19:48:50 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/09/28 13:27:24 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	count_dimensions(t_data *data, int fd)
+void	count_dimensions(int fd, t_data *data)
 {
 	char	*buffer;
 
@@ -63,11 +63,20 @@ void	fill_map(int fd, t_data *data)
 
 	buffer = get_next_line(fd);
 	if (!buffer)
+		exit(1);
+		i = 0;
 	while (buffer != NULL && buffer[0] != '\0')
 	{
-		
-		
+		ft_strlcpy(data->map[i], buffer, data->map_widt + 1);
+		i++;
 		free(buffer);
 		buffer = get_next_line(fd);
 	}
+}
+
+void	init_map(int fd, t_data *data)
+{
+	count_dimensions(fd, data);
+	locate_memory(data);
+	fill_map(fd, data);
 }

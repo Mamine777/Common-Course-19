@@ -6,7 +6,7 @@
 /*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 12:43:39 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/27 12:28:47 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/09/28 13:36:23 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	checkmap(int fd)
 			{
 				free(buffer);
 				close(fd);
-				exit(1);
+				return (1);
 			}
 			index++;
 		}
