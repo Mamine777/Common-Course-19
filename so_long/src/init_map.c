@@ -6,7 +6,7 @@
 /*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 13:31:12 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/28 13:27:24 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/05 13:17:45 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	fill_map(int fd, t_data *data)
 	buffer = get_next_line(fd);
 	if (!buffer)
 		exit(1);
-		i = 0;
+	i = 0;
 	while (buffer != NULL && buffer[0] != '\0')
 	{
 		ft_strlcpy(data->map[i], buffer, data->map_widt + 1);

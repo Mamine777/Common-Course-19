@@ -6,7 +6,7 @@
 /*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 15:57:22 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/28 14:35:05 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/09/29 17:59:54 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,14 @@ typedef struct s_data
 	void	*win;
 	int		win_height;
 	int		win_width;
-//	void	*img;
+	void	*img;
 	void	*img_empty;
 	void	*img_bush;
 	void	*img_exit;
 	void	*img_coin;
 	void	*img_player;
-//	int		widt_img;
-//	int		heit_img;
+	int		widt_img;
+	int		heit_img;
 }	t_data;
 
 int		checkmap(int fd);
