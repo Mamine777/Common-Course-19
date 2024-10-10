@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+         #
+#    By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/13 12:47:30 by mokariou          #+#    #+#              #
-#    Updated: 2024/09/04 19:09:02 by mokariou         ###   ########.fr        #
+#    Updated: 2024/10/10 18:32:20 by mokariou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,26 +21,31 @@ SRC = ft_memset.c ft_bzero.c ft_strlen.c ft_atoi.c ft_isdigit.c ft_isalpha.c \
       ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c ft_substr.c ft_strjoin.c ft_strtrim.c \
       ft_strmapi.c ft_itoa.c ft_split.c
 
-OFILES = $(SRC:.c=.o)
+SRC_BONUS = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c \
+ft_lstclear_bonus.c ft_lstdelone_bonus.c ft_lstiter_bonus.c \
+ft_lstlast_bonus.c ft_lstmap_bonus.c ft_lstnew_bonus.c \
+ft_lstsize_bonus.c
 
-# Default target to build the library
+OFILES = $(SRC:.c=.o)
+OFILES_BONUS = $(SRC_BONUS:.c=.o)
+
 all: $(NAME)
 
-# Rule to create the static library
 $(NAME): $(OFILES)
-	ar rcs $(NAME) $(OFILES)
+	ar rc $(NAME) $(OFILES)
 
-# Rule to compile .c files into .o files
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Clean up object files
-clean:
-	rm -f $(OFILES)
+bonus: $(OFILES_BONUS)
+	ar rc $(NAME) $(OFILES_BONUS)
 
-# Clean up object files and the library
+clean:
+	rm -f $(OFILES) $(OFILES_BONUS)
+
 fclean: clean
 	rm -f $(NAME)
 
-# Rebuild the library
 re: fclean all
+
+.PHONY: all bonus clean fclean re

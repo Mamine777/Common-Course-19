@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 20:14:46 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/05 13:52:51 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/10 18:33:04 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memset(void *b, int c, size_t len)
 	unsigned char	*s;
 	size_t			i;
 
+	if (!b)
+		return (NULL);
 	s = b;
 	i = 0;
 	while (i < len)
@@ -27,7 +29,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	return (s);
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 int	main()
@@ -37,8 +39,9 @@ int	main()
 	int	c = 0;
 
 	b = malloc(i);
+	b = NULL;
 	b = ft_memset(b, c, i);
 	for (size_t j = 0 ; j < i ; j++){
 		printf("%d\n", ((unsigned char *)b)[j]);
 	}
-}*/
+}

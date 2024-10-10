@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 15:45:36 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/05 12:05:35 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/10 19:00:39 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ size_t	ft_strlcpy(char *dest_str, const char *src_str, size_t dst_size)
 {
 	size_t	i;
 
-	if (!src_str)
-		return (0);
 	if (dst_size > 0)
 	{
 		i = 0;
@@ -31,12 +29,12 @@ size_t	ft_strlcpy(char *dest_str, const char *src_str, size_t dst_size)
 	return (ft_strlen(src_str));
 }
 
-/*#include <stdio.h>
-int	main()
-{
-	char aq[] = "hello";
-	char to[] = "tomma";
+// #include <stdio.h>
+// int	main()
+// {
+// 	char aq[] = "hello";
+// 	char to[] = "tomma";
 
-	ft_strlcpy(aq, to, 3);
-	printf("%s\n", aq);
-}*/
+// 	ft_strlcpy(aq, NULL, 3);
+// 	printf("%s\n", aq);
+// }

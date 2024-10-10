@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 00:00:58 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/05 17:34:16 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/10 17:44:08 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*char	test(unsigned int i, char c)
+char	test(unsigned int i, char c)
 {
 	return (c + i);
-}*/
+}
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -33,14 +33,15 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		tab[i] = f(i, s[i]);
 		i++;
 	}
+	tab[i] = '\0';
 	return (tab);
 }
 
 /*#include <stdio.h>
 int	main()
 {
-	char *a = "abcd";
+	char *a = "10";
 	char *tab = ft_strmapi(a, test);
-	printf ("original ;%s\n", a);
+	printf ("original :%s\n", a);
 	printf("%s\n", tab);
 }*/

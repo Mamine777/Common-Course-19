@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 16:11:22 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/05 17:37:04 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/10 17:34:50 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	tab[0] = '\0';
 	ft_strcpy(tab, s1);
 	ft_strcat(tab, s2);
+	tab[len0 + len1] = '\0';
 	return (tab);
 }
 
@@ -68,10 +69,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 int main()
 {
-    char *str1 = "Hello";
-    char *str2 = "World";
+ 	char *s1 = "where is my ";
+ 	char *s2 = "malloc ???";
 
-    char *joined = ft_strjoin(str1, str2);
+    char *joined = ft_strjoin(s1, s2);
 
     if (joined)
     {
