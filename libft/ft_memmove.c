@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 17:37:56 by mokariou          #+#    #+#             */
-/*   Updated: 2024/10/14 13:02:58 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:24:01 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,16 @@ void	*ft_memmove(void *dest_str, const void *src_str, size_t numtes)
 	return (dest_str);
 }
 
+// #include <stdio.h>
+// int	main()
+// {
+// 	char dest[50] = "hello";
+// 	const char src[50] = "tomaa";
+// 	size_t j = 3;
 
-#include <stdio.h>
-int	main()
-{
-	char dest[50] = "hello";
-	const char src[50] = "tomaa";
-	size_t j = 3;
+// 	printf("Before ft_memmove: dest = %s\n", dest);
+// 	ft_memmove(dest, src, j);
+// 	printf("After ft_memmove: dest = %s\n", dest);
 
-	printf("Before ft_memmove: dest = %s\n", dest);
-	ft_memmove(dest, src, j);
-	printf("After ft_memmove: dest = %s\n", dest);
-
-	return 0;
-}
+// 	return 0;
+// }

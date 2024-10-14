@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 13:20:36 by mokariou          #+#    #+#             */
-/*   Updated: 2024/10/10 19:28:35 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:37:53 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -35,11 +36,12 @@ void		ft_bzero(void *s, size_t n);
 void		*ft_memset(void *b, int c, size_t len);
 size_t		ft_strlen(const char *str);
 void		*ft_memcpy(void *dest_str, const void *src_str, size_t n);
+void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 void		*ft_memmove(void *dest_str, const void *src_str, size_t numtes);
 size_t		ft_strlcpy(char *dest_str, const char *src_str, size_t dst_size);
-void		*ft_calloc(size_t element, size_t size_of_ele);
+void		*ft_calloc(size_t num_elements, size_t size_of_ele);
 void		*ft_memchr(const void *s, int c, size_t n);
-const char	*ft_strrchr(const char *str, int search_str);
+char		*ft_strrchr(const char *string, int search_str);
 char		*ft_strchr(const char *str, int search_str);
 int			ft_strncmp(const char *block1, const char *block2, size_t num );
 int			ft_memcmp(const void *str1, const void *str2, size_t num_bytes);
