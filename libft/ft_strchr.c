@@ -6,7 +6,7 @@
 /*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 12:49:14 by mokariou          #+#    #+#             */
-/*   Updated: 2024/10/14 17:16:28 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:59:39 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ char	*ft_strchr(const char *str, int search_str)
 	return (NULL);
 }
 
-/*#include <stdio.h>
-int	main()
-{
-	char *s = "toma hello ooe ";
-	char c = 97;
-	printf("%s\n", ft_strchr(s, c)); // passing str + i to printf it 
-	//prints everything from I to \0
-}*/
+// #include <stdio.h>
+// int	main()
+// {
+// 	// char *s = "toma hello ooe ";
+// 	// char c = 97;
+// 	// printf("%s\n", ft_strchr(s, c)); // passing str + i to printf it 
+// 	printf("%s\n", ft_strchr("teste", '\0'));
+// 	//prints everything from I to \0
+// }

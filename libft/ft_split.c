@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 20:02:18 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/05 17:30:45 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/14 19:03:49 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,19 +95,18 @@ char	**ft_split(char const *s, char c)
 	return (tab);
 }
 
-/*int main()
-{
-    char **tab;
-    char *c1 = "helloKWorld";
-    char x = 'K';
-    tab = ft_split(c1, x);
-
-    for (int j = 0; tab[j] != NULL; j++)
-    {
-        printf("%s\n", tab[j]); 
-        free(tab[j]);           
-    }
-    free(tab);      
-
-    return 0;
-}*/
+// #include <stdio.h>
+// int main()
+// {
+//     char **tab;
+//     //char *c1 = "helloKWorld";
+//     //char x = 'K';
+//     tab = ft_split("hello!", ' ');	
+//     for (int j = 0; tab[j] != NULL; j++)
+//     {
+//         printf("%s\n", tab[j]); 
+//         free(tab[j]);           
+//     }
+//     free(tab);      
+//     return 0;
+// }

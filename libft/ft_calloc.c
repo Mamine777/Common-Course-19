@@ -6,7 +6,7 @@
 /*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 18:15:46 by mokariou          #+#    #+#             */
-/*   Updated: 2024/10/14 17:54:06 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:33:23 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_calloc(size_t num_elements, size_t size_of_ele)
 	size_t	total;
 
 	total = num_elements * size_of_ele;
-	if (total == 0)
-		return (malloc(1));
 	res = malloc(total);
 	if (!res)
 		return (NULL);
