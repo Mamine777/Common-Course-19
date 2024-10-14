@@ -6,7 +6,7 @@
 /*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 13:44:20 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/05 11:45:39 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/12 21:35:02 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,19 @@
 const char	*ft_strrchr(const char *str, int c)
 {
 	size_t			i;
-	unsigned char	search_str;
+	unsigned char	search_char;
 
 	i = ft_strlen(str);
-	search_str = (unsigned char)c;
+	search_char = (unsigned char)c;
 	while (i > 0)
 	{
-		if ((unsigned char)str[i] == search_str)
-		{
-			return ((char *)str + i);
-		}
+		if ((unsigned char)str[i - 1] == search_char)
+			return (&str[i - 1]);
 		i--;
 	}
-	if ((unsigned char)str[0] == search_str)
-		return ((char *)str + i);
-	return (0);
+	if (search_char == '\0')
+		return (&str[i]);
+	return (NULL);
 }
 
 /*#include <stdio.h>

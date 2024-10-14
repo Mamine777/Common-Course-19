@@ -6,7 +6,7 @@
 /*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:40:27 by mokariou          #+#    #+#             */
-/*   Updated: 2024/10/09 17:20:37 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/14 11:11:28 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,12 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*current;
-
 	if (!lst || !new)
 		return ;
-	if (lst == NULL)
+	if (*lst == NULL)
 		*lst = new;
-	current = *lst;
-	while (current->next != NULL)
-	{
-		current = current->next;
-	}
-	current->next = new;
-	new->next = NULL;
+	else
+		ft_lstlast(*lst)->next = new;
 }
 
 /*

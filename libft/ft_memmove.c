@@ -6,7 +6,7 @@
 /*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 17:37:56 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/05 18:30:10 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:02:58 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,9 @@ void	*ft_memmove(void *dest_str, const void *src_str, size_t numtes)
 		copy_forward(dest, src, numtes);
 	return (dest_str);
 }
-/*#include <stdio.h>
+
+
+#include <stdio.h>
 int	main()
 {
 	char dest[50] = "hello";
@@ -60,4 +62,4 @@ int	main()
 	printf("After ft_memmove: dest = %s\n", dest);
 
 	return 0;
-}*/
+}
