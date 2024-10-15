@@ -6,7 +6,7 @@
 /*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 20:02:18 by mokariou          #+#    #+#             */
-/*   Updated: 2024/10/14 19:03:49 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/14 19:02:53 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,12 +101,13 @@ char	**ft_split(char const *s, char c)
 //     char **tab;
 //     //char *c1 = "helloKWorld";
 //     //char x = 'K';
-//     tab = ft_split("hello!", ' ');	
+//     tab = ft_split("hello!", ' ');
 //     for (int j = 0; tab[j] != NULL; j++)
 //     {
 //         printf("%s\n", tab[j]); 
 //         free(tab[j]);           
 //     }
 //     free(tab);      
+
 //     return 0;
 // }
