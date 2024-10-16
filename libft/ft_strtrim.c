@@ -3,42 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 13:56:47 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/05 17:42:21 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/16 13:40:06 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 #include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
-	char	*tab;
 	size_t	end;
-	size_t	t;
-	size_t	len;
+	char	*trimmed_str;
 
+	if (!s1 || !set)
+		return (NULL);
 	i = 0;
-	t = 0;
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
 	end = ft_strlen(s1);
-	while (i < end && ft_strchr(set, s1[end - 1]))
+	while (end > i && ft_strchr(set, s1[end - 1]))
 		end--;
-	len = end - i + 1;
-	tab = malloc(sizeof(char) * (len));
-	if (!tab)
+	trimmed_str = (char *)malloc(sizeof(char) * (end - i + 1));
+	if (!trimmed_str)
 		return (NULL);
-	while (i < end)
-	{
-		tab[t] = s1[i];
-		t++;
-		i++;
-	}
-	tab[t] = '\0';
-	return (tab);
+	ft_strlcpy(trimmed_str, &s1[i], end - i + 1);
+	return (trimmed_str);
 }
 
 /*#include <stdio.h>

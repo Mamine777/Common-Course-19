@@ -6,16 +6,16 @@
 /*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 00:00:58 by mokariou          #+#    #+#             */
-/*   Updated: 2024/10/10 17:44:08 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/15 17:09:48 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	test(unsigned int i, char c)
-{
-	return (c + i);
-}
+// char	test(unsigned int i, char c)
+// {
+// 	return (c + i);
+// }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

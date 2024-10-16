@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 23:12:08 by mokariou          #+#    #+#             */
-/*   Updated: 2024/09/05 12:12:26 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/15 17:09:19 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *str, int fd)
 	size_t	i;
 
 	i = 0;
+	if (!str)
+		return ;
 	while (str[i])
 	{
 		write(fd, &str[i], 1);
