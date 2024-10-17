@@ -6,7 +6,7 @@
 /*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 13:24:02 by mokariou          #+#    #+#             */
-/*   Updated: 2024/10/09 13:36:49 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/16 19:19:52 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_lstsize(t_list *lst)
 	int		size;
 	t_list	*current;
 
+	if (!lst)
+		return (0);
 	size = 0;
 	current = lst;
 	while (current != NULL)

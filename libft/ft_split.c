@@ -6,92 +6,101 @@
 /*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 20:02:18 by mokariou          #+#    #+#             */
-/*   Updated: 2024/10/16 15:28:18 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/16 19:18:54 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	find_da_sep(char s, char c)
+static char	**free_tab(char **ptr, int i)
 {
-	return (c == s);
+	while (i > 0)
+	{
+		i--;
+		free(ptr[i]);
+	}
+	free(ptr);
+	return (0);
 }
 
-static int	calcu_da_len(char const *str, char sep)
+static int	count_da(char const *str, char c)
 {
 	int	i;
 	int	count;
 
 	i = 0;
 	count = 0;
-	while (str[i])
+	while (str[i] != '\0')
 	{
-		while (str[i] && find_da_sep(str[i], sep))
+		if (str[i] == c)
 			i++;
-		if (str[i])
+		else
+		{
 			count++;
-		while (str[i] && !find_da_sep(str[i], sep))
-			i++;
+			while (str[i] && str[i] != c)
+				i++;
+		}
 	}
 	return (count);
 }
 
-static int	len_for_dup(char const *str, char sep)
+static char	*dup_it(char *word, char const *s, int i, int len)
 {
-	int	i;
+	int	j;
 
-	i = 0;
-	while (str[i] && !find_da_sep(str[i], sep))
-		i++;
-	return (i);
+	j = 0;
+	while (len > 0)
+	{
+		word[j] = s[i - len];
+		j++;
+		len--;
+	}
+	word[j] = '\0';
+	return (word);
 }
 
-static char	*dup_it(char const *str, char c)
+static char	**split2(char const *s, char c, char **s2, int words)
 {
-	int		i;
-	int		len;
-	char	*tab;
+	int	i;
+	int	word;
+	int	len;
 
-	len = len_for_dup(str, c);
 	i = 0;
-	tab = malloc(sizeof(char) * (len + 1));
-	if (!tab)
-		return (NULL);
-	while (i < len)
+	word = 0;
+	len = 0;
+	while (word < words)
 	{
-		tab[i] = str[i];
-		i++;
+		while (s[i] && s[i] == c)
+			i++;
+		while (s[i] && s[i] != c)
+		{
+			i++;
+			len++;
+		}
+		s2[word] = (char *)malloc(sizeof(char) * (len + 1));
+		if (!s2)
+			return (free_tab(s2, word));
+		dup_it(s2[word], s, i, len);
+		len = 0;
+		word++;
 	}
-	tab[i] = '\0';
-	return (tab);
+	s2[word] = 0;
+	return (s2);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**tab;
-	int		i;
+	char			**s2;
+	unsigned int	words;
 
-	i = 0;
 	if (!s)
-		return (NULL);
-	tab = (char **)malloc(sizeof(char *) * (calcu_da_len(s, c) + 1));
-	if (!tab)
-		return (free(tab), NULL);
-	while (*s)
-	{
-		while (*s && find_da_sep(*s, c))
-			s++;
-		if (*s)
-		{
-			tab[i] = dup_it(s, c);
-			if (!tab[i++])
-				return (free(tab), NULL);
-		}
-		while (*s && !find_da_sep(*s, c))
-			s++;
-	}
-	tab[i] = NULL;
-	return (tab);
+		return (0);
+	words = count_da(s, c);
+	s2 = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!s2)
+		return (0);
+	s2 = split2(s, c, s2, words);
+	return (s2);
 }
 
 // #include "libft.h"
