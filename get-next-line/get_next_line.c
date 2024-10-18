@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 12:11:41 by mokariou          #+#    #+#             */
-/*   Updated: 2024/10/18 12:33:42 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/18 16:05:06 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,27 +72,24 @@ void	create(t_stack *list, int fd)
 {
 	char	*buffer;
 	int		char_read;
-	// if (!list || !fd)
-	// 	return ;
+
 	while (!new_line(list))
 	{
 		buffer = malloc(BUFFER_SIZE + 1);
 		if (!buffer)
+			return ;
+		char_read = read(fd, buffer, BUFFER_SIZE);
+		if (char_read < 0)
 		{
-//			free(buffer);
+			free(buffer);
+			deallocate(list, NULL, NULL);
 			return ;
 		}
-		char_read = read(fd, buffer, BUFFER_SIZE);
-		if (char_read < 0 || char_read == 0)
+		if (char_read == 0)
 		{
 			free(buffer);
 			return ;
 		}
-		// if (char_read == 0)
-		// {
-		// 	free(buffer);
-		// 	return ;
-		// }
 		buffer[char_read] = '\0';
 		add_stack(list, buffer);
 	}

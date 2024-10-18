@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   open_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
+/*   By: mokariou <mokariou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 11:57:07 by mokariou          #+#    #+#             */
-/*   Updated: 2024/10/18 15:18:37 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/18 15:26:35 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	main(int ac, char **av)
 {
 	int		fd;
 	char	*line;
-	
 	if (ac == 2)
 	{
 		fd = open(av[1], O_RDONLY);
