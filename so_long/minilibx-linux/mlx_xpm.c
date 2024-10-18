@@ -7,22 +7,13 @@
  ** Started on  Tue Dec 11 15:25:27 2001 olivier crouzet
  ** Last update Sat Oct  1 14:56:13 2005 Olivier Crouzet
  */
-
-
 #include	"mlx_int.h"
-
-extern struct s_col_name mlx_col_name[];
-
-
+extern struct s_col_name	mlx_col_name[];
 #define	RETURN	{ if (colors) free(colors); if (tab) free(tab); \
 		tab = (void *)0; if (colors_direct) free(colors_direct); \
 		if (img) {XDestroyImage(img->image); \
 				XFreePixmap(xvar->display,img->pix);free(img);} \
 		return ((void *)0);}
-
-
-
-
 char	*mlx_int_get_line(char *ptr,int *pos,int size)
 {
 	int			pos2;

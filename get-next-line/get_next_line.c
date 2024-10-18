@@ -6,7 +6,7 @@
 /*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 12:11:41 by mokariou          #+#    #+#             */
-/*   Updated: 2024/10/17 18:29:29 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/18 12:33:42 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	next_call(t_stack *stack)
 	deallocate(stack, new_node, buffer);
 }
 
-char	*get_line(t_stack *stack)
+char	*get_da_line(t_stack *stack)
 {
 	int		len;
 	char	*str_ln;
@@ -72,23 +72,27 @@ void	create(t_stack *list, int fd)
 {
 	char	*buffer;
 	int		char_read;
-
+	// if (!list || !fd)
+	// 	return ;
 	while (!new_line(list))
 	{
 		buffer = malloc(BUFFER_SIZE + 1);
 		if (!buffer)
+		{
+//			free(buffer);
 			return ;
+		}
 		char_read = read(fd, buffer, BUFFER_SIZE);
-		if (char_read < 0)
+		if (char_read < 0 || char_read == 0)
 		{
 			free(buffer);
 			return ;
 		}
-		if (char_read == 0)
-		{
-			free(buffer);
-			return ;
-		}
+		// if (char_read == 0)
+		// {
+		// 	free(buffer);
+		// 	return ;
+		// }
 		buffer[char_read] = '\0';
 		add_stack(list, buffer);
 	}
@@ -116,7 +120,7 @@ char	*get_next_line(int fd)
 		node = NULL;
 		return (NULL);
 	}
-	get_next_ln = get_line(node);
+	get_next_ln = get_da_line(node);
 	if (!get_next_ln)
 		return (deallocate(node, NULL, NULL), NULL);
 	next_call(node);

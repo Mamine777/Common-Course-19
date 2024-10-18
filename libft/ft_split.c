@@ -6,7 +6,7 @@
 /*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 20:02:18 by mokariou          #+#    #+#             */
-/*   Updated: 2024/10/16 19:18:54 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/18 11:04:11 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static char	**split2(char const *s, char c, char **s2, int words)
 			len++;
 		}
 		s2[word] = (char *)malloc(sizeof(char) * (len + 1));
-		if (!s2)
+		if (!s2[word])
 			return (free_tab(s2, word));
 		dup_it(s2[word], s, i, len);
 		len = 0;
