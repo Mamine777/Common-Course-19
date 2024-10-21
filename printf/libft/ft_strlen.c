@@ -6,7 +6,7 @@
 /*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 20:10:58 by mokariou          #+#    #+#             */
-/*   Updated: 2024/10/20 17:11:41 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/21 12:07:36 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strl(const char *str)
 {
-	int	i;
+	size	i;
 
 	i = 0;
 	while (str[i])

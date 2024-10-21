@@ -6,12 +6,13 @@
 /*   By: mokariou <mokariou@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 14:40:14 by mokariou          #+#    #+#             */
-/*   Updated: 2024/10/20 17:36:35 by mokariou         ###   ########.fr       */
+/*   Updated: 2024/10/20 17:05:11 by mokariou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+//We print Nums
 static int	tt_len(long n)
 {
 	int	count;
